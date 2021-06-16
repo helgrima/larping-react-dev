@@ -1,0 +1,9 @@
+.DogShow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DogShow-container-img {
+    max-width: 40vmin;
+}
