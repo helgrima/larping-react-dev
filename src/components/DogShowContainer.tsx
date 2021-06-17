@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FetchDogButton from "./FetchDogButton";
 import DogVisual from "./DogVisual";
 import FiletypeDetector, { Filetype } from "utilities/FiletypeDetector";
@@ -9,6 +9,10 @@ export const DogShowContainer: React.FC = () => {
     const [filetype, setFiletype] = useState<Filetype>(Filetype.Unknown);
     const [dogSource, setDogSource] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
+
+    useEffect(() => {
+        fetchRandomDog();
+    }, []);
     const fetchRandomDog = () => {
         setLoading(true);
         fetch("https://random.dog/woof.json").then(async (response: Response) => {

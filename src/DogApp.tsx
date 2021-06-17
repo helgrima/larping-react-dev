@@ -4,7 +4,8 @@ import 'DogApp.css';
 
 function DogApp() {
   const headerStyle: React.CSSProperties = {
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    textAlign: "center"
   };
 
   return (
