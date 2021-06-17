@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import FetchDogButton from "./FetchDogButton";
 import DogVisual from "./DogVisual";
+import Loader from "react-loader-spinner";
 import FiletypeDetector, { Filetype } from "utilities/FiletypeDetector";
 import './DogShowContainer.css';
-
 
 export const DogShowContainer: React.FC = () => {
     const [filetype, setFiletype] = useState<Filetype>(Filetype.Unknown);
@@ -17,26 +17,30 @@ export const DogShowContainer: React.FC = () => {
         setLoading(true);
         fetch("https://random.dog/woof.json").then(async (response: Response) => {
             response.json().then((payload: any) => {
-                setDogSource(payload.url);
-                setFiletype(FiletypeDetector.GetFiletype(payload.url));
-                setDogSource(payload.url);
-                setLoading(false);
+                fetch(payload.url).then(async (response: Response) => {
+                    response.blob().then(async (blob) => {
+                        setFiletype(FiletypeDetector.GetFiletype(payload.url));
+                        setDogSource(URL.createObjectURL(blob));
+                        setLoading(false);
+                    });
+                });
             });
-
         });
-
     };
     return (
         <div className="DogShow-container">
             <FetchDogButton onClick={fetchRandomDog} />
             {loading ?
-                <div>loading</div>
+                <Loader type="Rings"
+                    color="#34113F"
+                    height={80}
+                    width={80}
+                    timeout={3000} />
                 :
                 <DogVisual filetype={filetype} source={dogSource} />
             }
         </div>
     )
-
 }
 
 export default DogShowContainer;
