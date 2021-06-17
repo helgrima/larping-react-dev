@@ -1,2 +1,2 @@
-# Larping React font end developer
+# Larping React front end developer
 To run `npm start`
