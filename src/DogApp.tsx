@@ -11,7 +11,7 @@ function DogApp() {
   return (
     <div className="DogApp">
       <header className="DogApp-header">
-        <h1 style={headerStyle}>Fetch dog version 1.0</h1>
+        <h1 style={headerStyle}>Full of dogs version 1.0</h1>
       </header>
 
       <div className="DogApp-main">
