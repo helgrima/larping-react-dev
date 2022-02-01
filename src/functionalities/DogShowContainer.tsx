@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import FetchDogButton from "./FetchDogButton";
-import DogVisual from "./DogVisual";
-import Loader from "react-loader-spinner";
+import Button from "components/Button";
+import DogVisual from "components/DogVisual";
+import Loader from "components/Loader";
 import FiletypeDetector, { Filetype } from "utilities/FiletypeDetector";
 import './DogShowContainer.css';
 
@@ -26,15 +26,15 @@ export const DogShowContainer: React.FC = () => {
     };
     return (
         <div className="DogShow-container">
-            <FetchDogButton onClick={fetchRandomDog} />
+            <h2 className="caption">Dogs</h2>
             {loading ?
-                <Loader type="Rings"
-                    color="#34113F"
-                    height={80}
-                    width={80}
-                    timeout={3000} />
+                <Loader />
                 :
-                <DogVisual filetype={filetype} source={dogSource} />
+                <>
+                    <DogVisual filetype={filetype} source={dogSource} />
+                    <Button text="Fetch dog" onClick={fetchRandomDog} />
+                </>
+
             }
         </div>
     )

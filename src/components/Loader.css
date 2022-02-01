@@ -1,0 +1,31 @@
+.loader {
+    padding: 1em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader .loader-item {
+    border-width: 0.2em;
+    border-style: solid;
+    border-color: #34113F; 
+    width: 1em;
+    height: 1em;
+    border-radius: 0%;
+    animation-name: loader-item-spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.loader span.loader-text {
+    margin-top: 0.3em;
+}
+
+@keyframes loader-item-spin {
+  from {
+        transform: rotateY(180deg) rotateZ(45deg);
+    }
+  to {
+        transform: rotateY(-180deg) rotateZ(45deg);
+    }
+}
