@@ -1,4 +1,7 @@
 # Larping React front end developer
+
+![dog](/public/dog.jfif)
+
 To install `npm install`
 
 To update `npm update`

@@ -3,6 +3,7 @@ import './Input.css';
 
 type Props = {
     type: string
+    name: string
     onChange: (e: any) => void;
 };
 
