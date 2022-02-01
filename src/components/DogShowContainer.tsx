@@ -13,19 +13,16 @@ export const DogShowContainer: React.FC = () => {
     useEffect(() => {
         fetchRandomDog();
     }, []);
-    const fetchRandomDog = () => {
+    const fetchRandomDog = async () => {
         setLoading(true);
-        fetch("https://random.dog/woof.json").then(async (response: Response) => {
-            response.json().then((payload: any) => {
-                fetch(payload.url).then(async (response: Response) => {
-                    response.blob().then(async (blob) => {
-                        setFiletype(FiletypeDetector.GetFiletype(payload.url));
-                        setDogSource(URL.createObjectURL(blob));
-                        setLoading(false);
-                    });
-                });
-            });
-        });
+        URL.revokeObjectURL(dogSource);
+        const urlRequestResponse: Response = await fetch("https://random.dog/woof.json");
+        const urlRequestResponsePayload: any = await urlRequestResponse.json();
+        const mediaRequestResponse: Response = await fetch(urlRequestResponsePayload.url);
+        const mediaRequestResponsePayload: Blob = await mediaRequestResponse.blob();
+        setFiletype(FiletypeDetector.GetFiletype(urlRequestResponsePayload.url));
+        setDogSource(URL.createObjectURL(mediaRequestResponsePayload));
+        setLoading(false);
     };
     return (
         <div className="DogShow-container">
