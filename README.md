@@ -2,6 +2,8 @@
 
 ![dog](/public/dog.jfif)
 
+use nodejs version > 16.13.2
+
 To install `npm install`
 
 To update `npm update`
