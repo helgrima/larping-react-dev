@@ -9,7 +9,7 @@ type Props = {
 
 export const Select: React.FC<Props> = props => {
     const optionElements = props.options.map((option) =>
-        <option value={option[0]}>{option[1]}</option>
+        <option key={option[0]} value={option[0]}>{option[1]}</option>
     );
     return (
         <select className="select" onChange={props.onChange}>
