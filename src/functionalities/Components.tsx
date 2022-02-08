@@ -1,9 +1,10 @@
-import { SyntheticEvent } from "react";
+import React, { SyntheticEvent, useEffect, useState } from "react";
 import Label from "../components/Label";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import Loader from "../components/Loader";
 import Select from "components/Select";
+import Gauge from "components/Gauge";
 import './Components.css';
 
 export const Components: React.FC = () => {
@@ -12,6 +13,13 @@ export const Components: React.FC = () => {
         const target = e.target as HTMLInputElement;
         console.log(target.value);
     };
+
+    const [gaugeNumber, setGaugeNumber] = useState<number>(0);
+    const rangeOnChange = function (e: SyntheticEvent): void {
+        const target = e.target as HTMLInputElement
+        setGaugeNumber(parseInt(target.value));
+    };
+
     return (
         <div className="components-container">
             <h2 className="caption">Components</h2>
@@ -30,12 +38,17 @@ export const Components: React.FC = () => {
                     <Input type="datetime-local" onChange={printValue} />
                 </div>
                 <div className="label-input">
-                    <Label name="range" text="Range" />
-                    <Input type="range" onChange={printValue} />
-                </div>
-                <div className="label-input">
                     <Label name="select" text="Select" />
                     <Select name="select" options={[["1", "Alpha"], ["2", "Beta"], ["3", "Gamma"]]} onChange={printValue} />
+                </div>
+
+                <div className="label-input">
+                    <Label name="range" text="Range" />
+                    <Input type="range" value={gaugeNumber.toString()} onChange={rangeOnChange} />
+                </div>
+                <div className="label-input">
+                    <Label name="counter" text="Counter" />
+                    <Gauge value={gaugeNumber} prefix="%" />
                 </div>
 
                 <Button text="I am button" onClick={notImplemented} />
