@@ -27,16 +27,16 @@ export const Components: React.FC = () => {
             <div className="components">
                 <div className="label-input">
                     <Label name="text" text="Text" />
-                    <Input type="text" onChange={printValue} />
+                    <Input type="text" name="text" onChange={printValue} />
                 </div>
                 <div className="label-input">
                     <Label name="number" text="Number" />
-                    <Input type="number" onChange={printValue} />
+                    <Input type="number" name="number" onChange={printValue} />
                 </div>
                 <div className="label-input">
                     <Label name="datetime-local" text="Datetime local" />
-                    <Input type="datetime-local" onChange={printValue} />
-                </div>
+                    <Input type="datetime-local" name="datetime" onChange={printValue} />
+                </div> 
                 <div className="label-input">
                     <Label name="select" text="Select" />
                     <Select name="select" options={[["1", "Alpha"], ["2", "Beta"], ["3", "Gamma"]]} onChange={printValue} />
@@ -44,12 +44,9 @@ export const Components: React.FC = () => {
 
                 <div className="label-input">
                     <Label name="range" text="Range" />
-                    <Input type="range" value={gaugeNumber.toString()} onChange={rangeOnChange} />
-                </div>
-                <div className="label-input">
-                    <Label name="counter" text="Counter" />
-                    <Gauge value={gaugeNumber} prefix="%" />
-                </div>
+                    <Input type="range" name="range" value={gaugeNumber.toString()} onChange={rangeOnChange} />
+                </div>   
+                    <Gauge label="Gauge" value={gaugeNumber} prefix="%" />
 
                 <Button text="I am button" onClick={notImplemented} />
                 <Loader />
