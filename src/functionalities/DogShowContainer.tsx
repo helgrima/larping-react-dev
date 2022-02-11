@@ -12,6 +12,7 @@ export const DogShowContainer: React.FC = () => {
 
     useEffect(() => {
         fetchRandomDog();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const fetchRandomDog = async () => {
         setLoading(true);

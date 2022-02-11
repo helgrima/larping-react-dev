@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useEffect, useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 import Label from "../components/Label";
 import Button from "../components/Button";
 import Input from "../components/Input";
