@@ -36,9 +36,9 @@ export const Dashboard: React.FC = () => {
             <h2 className="caption">Dashboard</h2>
             <div>
                 <Label name="caption" text="Caption" />
-                <Input type="text" onChange={(e: SyntheticEvent) => setNewGauge({...newGauge, caption: (e.target as HTMLInputElement).value})} />
+                <Input type="text" name="caption" onChange={(e: SyntheticEvent) => setNewGauge({...newGauge, caption: (e.target as HTMLInputElement).value})} />
                 <Label name="prefix" text="Prefix" />
-                <Input type="text" onChange={(e: SyntheticEvent) => setNewGauge({...newGauge, prefix: (e.target as HTMLInputElement).value})} />
+                <Input type="text" name="prefix" onChange={(e: SyntheticEvent) => setNewGauge({...newGauge, prefix: (e.target as HTMLInputElement).value})} />
                 <Button onClick={addNewGauge} text="Add gauge" />
             </div>
             <div className="dashboard">

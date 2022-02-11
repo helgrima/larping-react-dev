@@ -12,7 +12,7 @@ export const Select: React.FC<Props> = props => {
         <option key={option[0]} value={option[0]}>{option[1]}</option>
     );
     return (
-        <select className="select" onChange={props.onChange}>
+        <select className="select" name="" onChange={props.onChange}>
             {optionElements}
         </select>
     );
