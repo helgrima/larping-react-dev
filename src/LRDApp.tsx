@@ -14,6 +14,7 @@ function LRDApp() {
         <Link to="/">Home</Link>
         <Link to="/dogs">Dogs</Link>
         <Link to="components">Components</Link>
+        <Link to="dashboard">Dashboard</Link>
       </nav>
 
       <div className="main">

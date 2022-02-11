@@ -1,4 +1,30 @@
 .gauge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 8rem;
+    padding: 1.0rem;
+    margin: 0.5rem;
+    border: 1px solid;
+    border-radius: 0.15rem;
+    background: #642a76;
+    box-shadow: 0.25rem 0.25rem 0.20rem 0.1rem #000000;
+}
+
+.gauge .label {
+    font-size: 1rem;
     font-weight: bold;
-    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0.25rem 0.25rem 0.20rem #000000;
+}
+
+.gauge .value {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0.25rem 0.25rem 0.20rem #000000;
 }
