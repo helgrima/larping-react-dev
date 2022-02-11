@@ -1,0 +1,21 @@
+.components {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.label-input {
+    display: flex;
+}
+
+.label-input .label {
+    width: 40%;
+}
+
+.label-input .input {
+    width: 60%;
+}
+
+.label-input .select {
+    width: 60%;
+}

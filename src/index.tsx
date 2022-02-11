@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'index.css';
-import DogApp from 'DogApp';
+import LRDApp from 'LRDApp';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { DogShowContainer } from 'functionalities/DogShowContainer';
+import { Components } from 'functionalities/Components';
+import { Dashboard } from 'functionalities/Dashboard';
 import reportWebVitals from 'reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <DogApp />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LRDApp />}>
+          <Route path="dogs" element={<DogShowContainer />} />
+          <Route path="components" element={<Components />} />
+          <Route path="dashboard" element={<Dashboard />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

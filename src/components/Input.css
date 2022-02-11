@@ -1,0 +1,12 @@
+.input {
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin: 0.2em;
+}
+
+.input[type="datetime-local"] {
+    font-family: inherit;
+}
