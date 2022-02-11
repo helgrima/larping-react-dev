@@ -28,3 +28,4 @@ To debug, use following `launch.json`
     ]
 }
 ```
+See this all in action straight from `release` https://full-of-dogs.netlify.app/
