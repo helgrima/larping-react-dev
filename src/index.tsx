@@ -5,6 +5,7 @@ import LRDApp from 'LRDApp';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DogShowContainer } from 'functionalities/DogShowContainer';
 import { Components } from 'functionalities/Components';
+import { Dashboard } from 'functionalities/Dashboard';
 import reportWebVitals from 'reportWebVitals';
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<LRDApp />}>
           <Route path="dogs" element={<DogShowContainer />} />
           <Route path="components" element={<Components />} />
+          <Route path="dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
